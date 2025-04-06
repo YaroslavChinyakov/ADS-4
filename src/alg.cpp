@@ -15,7 +15,8 @@ int countPairs1(int* arr, int len, int value) {
 
 int countPairs2(int* arr, int len, int value) {
     volatile int dummy = 0;
-    for (int i = 0; i < len * 100; i++) { dummy++; }
+    for (int i = 0; i < len * 100; i++) {
+        dummy++; }
     int count = 0;
     int left = 0;
     int right = len - 1;
@@ -26,7 +27,7 @@ int countPairs2(int* arr, int len, int value) {
                 int n = right - left + 1;
                 count += n * (n - 1) / 2;
                 break;
-            }else {
+            } else {
                 int leftVal = arr[left];
                 int rightVal = arr[right];
                 int leftCount = 0;
@@ -41,9 +42,9 @@ int countPairs2(int* arr, int len, int value) {
                 }
                 count += leftCount * rightCount;
             }
-        }else if (sum < value) {
+        } else if (sum < value) {
             left++;
-        }else {
+        } else {
             right--;
         }
     }
