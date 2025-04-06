@@ -50,7 +50,7 @@ int countPairs2(int* arr, int len, int value) {
         else if (sum < value) {
             left++;
         }
-        else { 
+        else {  
             right--;
         }
     }
@@ -61,8 +61,9 @@ int countPairs3(int* arr, int len, int value) {
     int count = 0;
     for (int i = 0; i < len - 1; i++) {
         int target = value - arr[i];
-        if (i + 1 < len && (target < arr[i + 1] || target > arr[len - 1]))
+        if (i + 1 < len && (target < arr[i + 1] || target > arr[len - 1])) {
             continue;
+        }
         auto range = std::equal_range(arr + i + 1, arr + len, target);
         count += (range.second - range.first);
     }
